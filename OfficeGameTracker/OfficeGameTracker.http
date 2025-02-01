@@ -1,0 +1,6 @@
+@OfficeGameTracker_HostAddress = http://localhost:5110
+
+GET {{OfficeGameTracker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
