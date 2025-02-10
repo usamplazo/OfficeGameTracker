@@ -15,7 +15,7 @@ namespace OfficeGameTracker.Entities
         public string Description { get; set; }
 
         [Required]
-        public decimal Points { get; set; }
+        public float Points { get; set; }
 
         [Required]
         public int DailyLimit { get; set; }

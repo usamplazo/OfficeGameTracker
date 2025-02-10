@@ -9,7 +9,7 @@ namespace OfficeGameTracker.Services
         {
             using (IServiceScope serviceScope = app.ApplicationServices.CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<OfficeGameTrackerDbContext>().Database.Migrate();
+                serviceScope.ServiceProvider.GetService<GameTrackerDbContext>().Database.Migrate();
             }
         }
     }

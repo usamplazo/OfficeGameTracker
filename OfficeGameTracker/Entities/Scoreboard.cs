@@ -13,9 +13,9 @@ namespace OfficeGameTracker.Entities
         [Required]
         public Guid DisciplineId { get; set; }
 
-        [Required]
         // for better performance in data queries
         // format: yyyyMMdd
+        [Required]
         public int DateDisciplinePlayed { get; set; }
 
         public DateTime CreatedOnUtc { get; set; }
