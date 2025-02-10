@@ -1,0 +1,15 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+       ACCEPT_EULA: "Y"
+       SA_PASSWORD: "Password1234!"
+    ports:
+     - "1544:1433"
+
+  officegametracker:
+    build:
+     context: ./OfficeGameTracker
+     dockerfile: Dockerfile
+    ports:
+     - "8090:8080"

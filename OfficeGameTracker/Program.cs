@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OfficeGameTracker.Data;
+using OfficeGameTracker.Services;
 
 internal class Program
 {
@@ -14,9 +15,11 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddDbContext<OfficeGameTrackerDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        builder.Services.AddDbContext<GameTrackerDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SecondConnection")));
 
         var app = builder.Build();
+
+        DatabaseManagmentService.MigrationInitialisation(app);
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

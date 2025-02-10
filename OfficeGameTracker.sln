@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeGameTracker", "OfficeGameTracker\OfficeGameTracker.csproj", "{BB02F457-33CA-46A4-83E8-2F04C269F26A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7257385F-B03D-4C3A-AB48-7BDE91276B5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BB02F457-33CA-46A4-83E8-2F04C269F26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB02F457-33CA-46A4-83E8-2F04C269F26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB02F457-33CA-46A4-83E8-2F04C269F26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7257385F-B03D-4C3A-AB48-7BDE91276B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7257385F-B03D-4C3A-AB48-7BDE91276B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7257385F-B03D-4C3A-AB48-7BDE91276B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7257385F-B03D-4C3A-AB48-7BDE91276B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

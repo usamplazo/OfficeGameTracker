@@ -14,11 +14,11 @@ namespace OfficeGameTracker.Controllers
             _context = context;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<Contestant> Get()
+        [HttpGet]
+        public IEnumerable<Contestant> GetContestants()
         {
-            var test = _context.Disciplines.ToList();
-            return [.. _context.Contestants];
+            List<Contestant> contestants = _context.Contestants.ToList();
+            return contestants;
         }
     }
 }
