@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OfficeGameTracker.Data;
 using OfficeGameTracker.Entities;
 
@@ -18,16 +17,14 @@ namespace OfficeGameTracker.Controllers
         [HttpGet]
         public IEnumerable<Contestant> GetContestants()
         {
-            List<Contestant> contestants = _context.Contestants.ToList();
-            return contestants;
+            return _context.Contestants.ToList();
         }
 
         [HttpGet]
 
-        public Contestant GetContestant(Guid id)
+        public Contestant GetContestantById(Guid id)
         {
-            Contestant selectedContestant = _context.Contestants.SingleOrDefault(con => con.ContestantId == id);
-            return selectedContestant;
+            return _context.Contestants.SingleOrDefault(con => con.ContestantId == id);
         }
 
         [HttpPut]
@@ -59,6 +56,30 @@ namespace OfficeGameTracker.Controllers
             _context.Contestants.Remove(existingContestant);
 
             return;
+        }
+
+        [HttpGet]
+
+        public List<Scoreboard> GetContestantScoreboard(Guid contestantId)
+        {
+            return _context.Scoreboards.Where(score => score.ContestantId == contestantId)
+                                                  .OrderBy(score => score.ModifiedOnUtc)
+                                                  .ToList();
+        }
+
+        [HttpGet]
+        public List<Scoreboard> GetAllScoreboardsForDiscipline(Guid disciplineId)
+        {
+            return _context.Scoreboards.Where(score => score.DisciplineId == disciplineId).ToList();
+        }
+
+        [HttpGet]
+        public List<Scoreboard> GetDisciplineScoreboardsForContestant(Guid contestantId, Guid disciplineId)
+        {
+            return _context.Scoreboards
+                                    .Where(score => score.ContestantId == contestantId
+                                                        && score.DisciplineId == disciplineId)
+                                    .ToList();
         }
     }
 }
